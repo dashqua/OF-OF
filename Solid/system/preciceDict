@@ -1,0 +1,56 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      preciceDict;
+}
+
+preciceConfig "precice-config.xml";
+
+participant Solid;
+
+modules (FSI);
+
+interfaces
+{
+  Interface1
+  {
+    mesh              Solid-Mesh-Centers;
+    patches           (wetsurface);
+    locations         faceCenters;
+    
+    readData
+    (
+	//Displacements
+    );
+    
+    writeData
+    (
+	Force
+    );
+  };
+  
+  Interface2
+  {
+    mesh              Solid-Mesh-Nodes;
+    patches           (wetsurface);
+    locations         faceNodes;
+    
+    readData
+    (
+      Displacement
+    );
+    
+    writeData
+    (
+    );
+  };
+};
+
+FSI
+{
+  rho rho [1 -3 0 0 0 0 0] 1000;
+  solverType incompressible;
+}

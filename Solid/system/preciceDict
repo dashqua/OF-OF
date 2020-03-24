@@ -17,7 +17,7 @@ interfaces
 {
   Interface1
   {
-    mesh              Solid-Mesh-Centers;
+    mesh              Solid-Mesh-Faces;   // Centers;
     patches           (wetsurface);
     locations         faceCenters;
     

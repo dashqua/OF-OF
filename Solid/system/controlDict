@@ -52,7 +52,7 @@ graphFormat     raw;
 runTimeModifiable false;
 
 // ************************************************************************* //
-functions
+ functions
 {
     preCICE_Adapter
     {
@@ -60,3 +60,4 @@ functions
         libs ("libpreciceAdapterFunctionObject.so");
     }
 }
+

@@ -17,6 +17,8 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0 0 0];
 
+#include "../constant/runParameters"
+
 internalField   uniform (0 0 0);
 
 boundaryField
@@ -24,7 +26,9 @@ boundaryField
     wetsurface
     {
         type    tractionTraction;
-        value   uniform (0 0 0);
+	loadingType FSI;
+        pressure   $p;
+	value  uniform (0 0 0);
     }
 
    clamp

@@ -23,12 +23,12 @@ interfaces
     
     readData
     (
-	//Displacements
+	Force 
     );
     
     writeData
     (
-	Force
+
     );
   };
   
@@ -40,11 +40,12 @@ interfaces
     
     readData
     (
-      Displacement
+
     );
     
     writeData
     (
+	Displacement
     );
   };
 };
@@ -52,5 +53,6 @@ interfaces
 FSI
 {
   rho rho [1 -3 0 0 0 0 0] 1000;
-  solverType incompressible;
+  solverType structure;
+  namePointDisplacement uN;
 }

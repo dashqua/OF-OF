@@ -26,7 +26,8 @@ rm -fv ${Participant1}_reconstructPar.log
 
 # Participant 2: Solid (deal.II)
 ./Solid/Allclean
-rm *.log *~
+rm -rf *.log *~
+cp Solid/0/uN.orig Solid/0/uN
 exit 0
 
 
@@ -62,6 +63,7 @@ rm -fv \
 # Remove the preCICE address files
 rm -rfv precice-run
 rm -fv .*.address
+
 
 echo "Cleaning complete!"
 #------------------------------------------------------------------------------

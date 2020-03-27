@@ -21,11 +21,12 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    clamp
-    {
-        type            calculated;
-    }
     wetsurface
+    {
+        type            fixedValue;
+	value           uniform (0 0 0);
+    }
+    clamp
     {
         type            calculated;
     }
